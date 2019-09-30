@@ -1,0 +1,5 @@
+/ Modal
+#node-modal.modal{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      #node-modal-form=render 'form'

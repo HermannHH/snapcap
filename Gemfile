@@ -71,3 +71,6 @@ gem 'hamlit-rails'
 
 # https://github.com/plataformatec/simple_form
 gem 'simple_form'
+
+# https://github.com/collectiveidea/awesome_nested_set
+gem 'awesome_nested_set'

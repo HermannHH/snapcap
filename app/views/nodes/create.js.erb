@@ -1,0 +1,7 @@
+<% if @node.persisted? %>
+  $("#node-modal").modal("hide");
+  $("#node-modal-wrapper").html();
+<% else %>
+  console.log('not saved')
+  $("#node-modal-form").html("<%= j (render 'form' ) %>");
+<% end %>

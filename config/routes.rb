@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root "landing#index"
 
-  resources :nodes
+  resources :nodes, param: :token
 end
