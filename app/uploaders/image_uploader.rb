@@ -15,16 +15,16 @@ class ImageUploader < Shrine
   end
 
   process(:store) do |io, context|
-    original = io.download
-    pipeline = ImageProcessing::MiniMagick.source(original)
+    # original = io.download
+    # pipeline = ImageProcessing::MiniMagick.source(original)
 
-    social = pipeline.resize_to_limit!(1200, 628)
-    card_cover = pipeline.resize_to_limit!(350, 350)
-    thumb    = pipeline.resize_to_limit!(200, 200)
+    # social = pipeline.resize_to_limit!(1200, 628)
+    # card_cover = pipeline.resize_to_limit!(350, 350)
+    # thumb    = pipeline.resize_to_limit!(200, 200)
 
-    original.close!
+    # original.close!
 
-    { original: io, social: social, thumb: thumb, card_cover: card_cover }
+    { original: io }
   end
 
   def generate_location(io, context = {})

@@ -89,3 +89,6 @@ gem "aws-sdk-s3"
 
 # https://github.com/janko/image_processing
 gem "image_processing", "~> 1.0"
+
+# https://github.com/plataformatec/devise
+gem 'devise'

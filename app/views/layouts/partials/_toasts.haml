@@ -1,0 +1,7 @@
+#toast-wrapper
+  - if notice
+    .alert.alert-warning{:role => "alert"}= notice
+  - if alert
+    .alert.alert-danger{:role => "alert"}= alert
+  - if success.present?
+    .alert.alert-success{:role => "alert"}= success
