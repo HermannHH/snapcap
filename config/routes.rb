@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root "landing#index"
 
-  resources :nodes, param: :token
+  resources :nodes, param: :token do
+    resources :file_stores, param: :token, module: :nodes
+  end
 end

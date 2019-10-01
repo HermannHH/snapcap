@@ -2,10 +2,10 @@ require "shrine"
 require "shrine/storage/s3"
 
 s3_options = {
-    access_key_id:      Krated.credentials.dig(:aws, :access_key_id),
-    secret_access_key:  Krated.credentials.dig(:aws, :secret_access_key),
-    region:             Krated.credentials.dig(:aws, :region),
-    bucket:             Krated.credentials.dig(:aws, :s3_bucket)
+    access_key_id:      ENV.fetch("AWS_ACCESS_KEY_ID") { "" },
+    secret_access_key:  ENV.fetch("AWS_SECRET_ACCESS_KEY") { "" },
+    region:             ENV.fetch("AWS_REGION") { "" },
+    bucket:             ENV.fetch("AWS_S3_BUCKET") { "" }
 }
 
 if Rails.env.development?

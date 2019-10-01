@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_30_181847) do
+ActiveRecord::Schema.define(version: 2019_10_01_043907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "file_stores", force: :cascade do |t|
+    t.string "fileable_type"
+    t.bigint "fileable_id"
+    t.jsonb "attachment_data"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fileable_type", "fileable_id"], name: "index_file_stores_on_fileable_type_and_fileable_id"
+  end
 
   create_table "nodes", force: :cascade do |t|
     t.string "name"

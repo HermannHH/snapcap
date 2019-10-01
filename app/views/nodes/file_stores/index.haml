@@ -4,6 +4,4 @@
   %p{ data: { token: node.token }}
     =node.name
     =link_to "Destroy", node_path(node.token), remote: true, method: :delete
-    =link_to "Add Image", new_node_file_store_path(node.token), class: "btn btn-primary", remote: true, data: { toggle: "modal" }
 #node-modal-wrapper
-#node-file-store-modal-wrapper
