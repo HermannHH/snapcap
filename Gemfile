@@ -74,3 +74,18 @@ gem 'simple_form'
 
 # https://github.com/collectiveidea/awesome_nested_set
 gem 'awesome_nested_set'
+
+# https://github.com/shrinerb/shrine
+gem "shrine", "~> 2.0"
+
+# https://github.com/sdsykes/fastimage
+gem 'fastimage'
+
+# https://github.com/minimagick/minimagick
+gem "mini_magick"
+
+# https://github.com/aws/aws-sdk-ruby#options
+gem "aws-sdk-s3"
+
+# https://github.com/janko/image_processing
+gem "image_processing", "~> 1.0"
