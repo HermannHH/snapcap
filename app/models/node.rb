@@ -20,6 +20,8 @@ class Node < ApplicationRecord
   
   has_secure_token
 
+  has_many :file_stores, as: :fileable, dependent: :destroy
+
   validates :name, presence: true
 
 end

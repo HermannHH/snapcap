@@ -1,10 +1,10 @@
-= simple_form_for @node, remote: true  do |f|
+= simple_form_for [:node, @file_store ], remote: true, html: { multipart: true }  do |f|
   .modal-header
     %h5#exampleModalLabel.modal-title Modal title
     %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
       %span{"aria-hidden" => "true"} ×
   .modal-body      
-    = f.input :name
+    = f.input :attachment, as: :file
   .modal-footer
     = f.submit "Save", class: "btn btn-primary"
     -# %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close

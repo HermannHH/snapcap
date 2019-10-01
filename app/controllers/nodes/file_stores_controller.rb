@@ -8,15 +8,15 @@ class Nodes::FileStoresController < ApplicationController
   end
 
   def create
-    @node = Node.new(data_params)
-
+    @file_store = FileStore.new(data_params)
+    @file_store.fileable = @node
     respond_to do |format|
-      if @node.save
+      if @file_store.save
         # format.html { redirect_to admin_company_path(@company.slug), notice: 'Company was successfully created.' }
         format.js
       else
         # format.html { render :new }
-        format.json { render json: @node.errors, status: :unprocessable_entity }
+        format.json { render json: @file_store.errors, status: :unprocessable_entity }
         format.js
       end
     end
@@ -31,24 +31,24 @@ class Nodes::FileStoresController < ApplicationController
 
   private
 
-    # before_action :set_node, only: [:destroy]
+    before_action :set_node, only: [:create]
 
 
-    # def set_node
-    #   @node = Node.find_by(token: url_params[:token])
-    # end
+    def set_node
+      @node = Node.find_by(token: url_params[:node_token])
+    end
 
 
     def data_params
-      params.require(:node).permit(
-        :name
+      params.require(:file_store).permit(
+        :attachment
       )
     end
 
-    # def url_params
-    #   params.permit(
-    #     :token
-    #   )
-    # end
+    def url_params
+      params.permit(
+        :node_token
+      )
+    end
   
 end

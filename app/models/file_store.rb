@@ -12,4 +12,13 @@
 #
 
 class FileStore < ApplicationRecord
+
+  has_secure_token
+
+  # mount_uploader :attachment, FileStoreUploader
+  include ImageUploader::Attachment.new(:attachment)  # ImageUploader will attach and manage `image`
+
+  # Associations
+  belongs_to :fileable, polymorphic: true
+
 end
