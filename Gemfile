@@ -54,6 +54,9 @@ group :development do
 
   gem 'html2haml'
 
+  # https://github.com/ryanb/letter_opener
+  gem "letter_opener"
+
 end
 
 
