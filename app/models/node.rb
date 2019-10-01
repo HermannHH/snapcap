@@ -12,6 +12,7 @@
 #  children_count :integer          default("0"), not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  user_id        :integer
 #
 
 class Node < ApplicationRecord
@@ -20,6 +21,7 @@ class Node < ApplicationRecord
   
   has_secure_token
 
+  belongs_to :user
   has_many :file_stores, as: :fileable, dependent: :destroy
 
   validates :name, presence: true
